@@ -8,12 +8,18 @@ To write a program to implement the Decision Tree Regressor Model for Predicting
 2. Anaconda – Python 3.7 Installation / Moodle-Code Runner
 
 ## Algorithm
-Import pandas library to read csv or excel file.
+Import pandas library to read csv or excel file. 
+
 Import LabelEncoder using sklearn.preprocessing library.
+
 Transform the data's using LabelEncoder.
+
 Import decision tree regressor from sklearn.tree library to predict the values.
+
 Find Mean squared error and r2.
+
 Predict the values.
+
 End of the program
 
 ## Program:
