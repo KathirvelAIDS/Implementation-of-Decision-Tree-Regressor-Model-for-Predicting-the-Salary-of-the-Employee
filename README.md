@@ -31,60 +31,97 @@ RegisterNumber: 212221230047
 import pandas as pd
 data=pd.read_csv("Salary.csv")
 data.head()
+
 data.info()
+
 data.isnull().sum()
+
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
+
 data["Position"]=le.fit_transform(data["Position"])
 data.head()
+
 x=data[["Position","Level"]]
-y=data["Salary"]
+x.head()
+
+y=data[["Salary"]]
+
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=2)
+x_train, x_test, y_train, y_test=train_test_split(x,y,test_size=0.2,random_state=2)
+
 from sklearn.tree import DecisionTreeRegressor
 dt=DecisionTreeRegressor()
 dt.fit(x_train,y_train)
 y_pred=dt.predict(x_test)
+
 from sklearn import metrics
-mse=metrics.mean_squared_error(y_test,y_pred)
+mse=metrics.mean_squared_error(y_test, y_pred)
 mse
+
 r2=metrics.r2_score(y_test,y_pred)
 r2
+
 dt.predict([[5,6]])
-*
-*/
 ```
 
-## Output:
-
-data.head()
-
-![image](https://user-images.githubusercontent.com/94911373/169984750-b157da9d-7e46-4a7b-a81f-6a94c943668e.png)
+Output:
 
 
-data.info()
-
-![image](https://user-images.githubusercontent.com/94911373/169984837-b5f9b140-de62-493a-b95c-1a35e8151fc0.png)
 
 
-data.head() using label encoder
+Initial dataset:
 
 
-![image](https://user-images.githubusercontent.com/94911373/169984891-510bc1e5-02a5-4ef4-985c-09364fc7d986.png)
-
-MSE
-
-![image](https://user-images.githubusercontent.com/94911373/169984956-1a502faf-897b-4e84-bdfd-d0e900fba9fb.png)
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/e67dce43-f2f1-4b10-aa93-13b19af72c40)
 
 
-r2
-
-![image](https://user-images.githubusercontent.com/94911373/169985024-962991f1-bc58-4f8f-b423-fdba713bb31d.png)
 
 
-PREDICTION
+Data Info:
 
-![image](https://user-images.githubusercontent.com/94911373/169985129-0c24d0bf-b8b1-4afe-8ac9-ffc725f4b1a4.png)
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/27a4e4fe-3c91-4fe9-aadb-3feaa6c6964c)
+
+
+
+Optimization of null values:
+
+
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/d6f95ced-aafb-462c-ad5c-c2df1bdc3172)
+
+
+
+
+Converting string literals to numericl values using label encoder:
+
+
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/c73a0f0f-eee7-4f34-988e-4770934cf60e)
+
+
+
+
+Assigning x and y values:
+
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/d863d9b4-6b6a-4bda-aa85-b0bc7dbbe2d3)
+
+
+
+Mean Squared Error:
+
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/166fe836-2adc-4a17-bb9d-75e8fe732dba)
+
+
+
+R2 (variance):
+
+
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/f3d52247-a3d4-4e08-9aab-f5d3d645d505)
+
+
+Prediction:
+
+
+![image](https://github.com/KathirvelAIDS/Implementation-of-Decision-Tree-Regressor-Model-for-Predicting-the-Salary-of-the-Employee/assets/94911373/c9cd2459-95e0-433e-8d09-313221422e9b)
 
 
 
