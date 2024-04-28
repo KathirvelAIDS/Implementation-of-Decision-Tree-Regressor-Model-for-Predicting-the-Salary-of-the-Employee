@@ -16,7 +16,7 @@ Transform the data's using LabelEncoder.
 
 Import decision tree regressor from sklearn.tree library to predict the values.
 
-Find Mean squared error and r2.
+Find Mean squared error and r2
 
 Predict the values.
 
